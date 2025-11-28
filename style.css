@@ -7,7 +7,6 @@
   --beige: #E3D5B8;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +20,6 @@ body {
   line-height: 1.6;
 }
 
-/* ACCESSIBILITY: SKIP LINK */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -37,7 +35,6 @@ body {
   top: 0.5rem;
 }
 
-/* Focus styles */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -47,7 +44,6 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -63,7 +59,6 @@ header .logo {
   color: var(--vault-yellow);
 }
 
-/* NAVIGATION */
 header nav ul {
   display: flex;
   list-style: none;
@@ -100,9 +95,8 @@ header nav a.active {
   color: #ffffff;
 }
 
-/* HOME HERO SECTION */
 .hero {
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  background: url('images/bg1.png') center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;
