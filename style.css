@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --vault-blue: #003366;
+  --vault-yellow: #FFD100;
+  --brown: #5A3E2B;
+  --beige: #E3D5B8;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--vault-blue);
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--vault-yellow);
+}
+
+header nav {
+  display: flex;
+  list-style: none; /* ✅ Removes bullet points */
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: var(--vault-yellow);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+header nav a:hover,
+header nav a.active {
+  color: white;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: var(--vault-yellow);
+  color: var(--vault-blue);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--vault-blue);
+  color: white;
+}
+
+.btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* FEATURED RECIPES */
+.recipes {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.recipes h2 {
+  font-size: 2rem;
+  color: var(--vault-blue);
+  margin-bottom: 2rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  margin: 1rem 0;
+  color: var(--vault-blue);
+}
+
+/* ABOUT PAGE */
+.about-hero {
+  background: url('https://images.unsplash.com/photo-1514516870926-2059896f3f13?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: #0c25a5;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.text-block {
+  margin-bottom: 30px;
+}
+
+.text-block h3 {
+  font-size: 1.8rem;
+  color: var(--vault-blue);
+  margin-bottom: 10px;
+}
+
+.text-block p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* RECIPES PAGE */
+.recipes-hero {
+  background: url('https://images.unsplash.com/photo-1601050690597-3ecdd3f3b2aa?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.recipes-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.recipes-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.recipe-card p {
+  margin: 0 15px 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--vault-blue);
+  color: var(--vault-yellow);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
