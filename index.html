@@ -7,46 +7,91 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- HEADER -->
-  <header>
-    <div class="logo">Appalachian Cookbook</div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="recipes.html">Recipes</a>
-      <a href="about.html">About</a>
+  <header role="banner">
+    <div class="logo" aria-label="Appalachian Cookbook logo">Appalachian Cookbook</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Taste the Wasteland</h1>
-      <p>Explore rustic Appalachian recipes inspired by Fallout 76.</p>
-      <a href="recipes.html" class="btn">View Recipes</a>
-    </div>
-  </section>
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Taste the Wasteland</h1>
+        <p>Explore rustic Appalachian recipes inspired by Fallout 76.</p>
+        <a href="recipes.html" class="btn">View Recipes</a>
+      </div>
+    </section>
 
-  <!-- FEATURED RECIPES -->
-  <section class="recipes">
-    <h2>Featured Recipes</h2>
-    <div class="recipe-grid">
-      <div class="recipe-card">
-        <img src="images/food1.jpg" alt="Mutfruit Tart">
-        <h3>Mutfruit Tart</h3>
-        <a href="recipes.html" class="btn small">View Recipe</a>
+    <!-- FEATURED RECIPES -->
+    <section class="recipes" aria-labelledby="featured-recipes-heading">
+      <h2 id="featured-recipes-heading">Featured Recipes</h2>
+      <div class="recipe-grid">
+        <article class="recipe-card">
+          <img src="images/food1.jpg" alt="Mutfruit Tart on a rustic plate">
+          <h3>Mutfruit Tart</h3>
+          <a href="recipes.html" class="btn small">View Recipe</a>
+        </article>
+        <article class="recipe-card">
+          <img src="images/food2.jpg" alt="Grilled Brahmin steak with herbs">
+          <h3>Brahmin Steak</h3>
+          <a href="recipes.html" class="btn small">View Recipe</a>
+        </article>
+        <article class="recipe-card">
+          <img src="images/food3.jpeg" alt="Glass of Sweet Water Tea with ice">
+          <h3>Sweet Water Tea</h3>
+          <a href="recipes.html" class="btn small">View Recipe</a>
+        </article>
       </div>
-      <div class="recipe-card">
-        <img src="images/food2.jpg" alt="Brahmin Steak">
-        <h3>Brahmin Steak</h3>
-        <a href="recipes.html" class="btn small">View Recipe</a>
-      </div>
-      <div class="recipe-card">
-        <img src="images/food3.jpeg" alt="Sweet Water Tea">
-        <h3>Sweet Water Tea</h3>
-        <a href="recipes.html" class="btn small">View Recipe</a>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- FORM / INTERACTIVE SECTION -->
+    <section class="newsletter" aria-labelledby="join-cooks-heading">
+      <h2 id="join-cooks-heading">Join the Wasteland Cooks</h2>
+      <p>Get notified when new recipes are added and share your own Appalachian-inspired dishes.</p>
+
+      <form class="recipe-form" action="#" method="post">
+        <fieldset>
+          <legend>Stay connected with the Appalachian Cookbook</legend>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Vault Dweller Name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="vaultdweller@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="favorite-recipe">Favorite Wasteland Recipe</label>
+            <input id="favorite-recipe" name="favorite-recipe" type="text" placeholder="e.g., Mutfruit Tart">
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Cooking Experience Level</label>
+            <select id="experience" name="experience">
+              <option value="beginner">Beginner Scavenger</option>
+              <option value="intermediate">Seasoned Survivor</option>
+              <option value="expert">Legendary Chef</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn">Sign Up</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>

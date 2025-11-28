@@ -21,6 +21,32 @@ body {
   line-height: 1.6;
 }
 
+/* ACCESSIBILITY: SKIP LINK */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--vault-yellow);
+  outline-offset: 2px;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -37,9 +63,10 @@ header .logo {
   color: var(--vault-yellow);
 }
 
-header nav {
+/* NAVIGATION */
+header nav ul {
   display: flex;
-  list-style: none; /* ✅ Removes bullet points */
+  list-style: none;
   gap: 1.5rem;
 }
 
@@ -47,12 +74,30 @@ header nav a {
   color: var(--vault-yellow);
   text-decoration: none;
   font-weight: 600;
+  position: relative;
+  padding-bottom: 0.2rem;
   transition: color 0.2s;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--vault-yellow);
+  transition: width 0.2s ease-out;
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+  width: 100%;
 }
 
 header nav a:hover,
 header nav a.active {
-  color: white;
+  color: #ffffff;
 }
 
 /* HERO SECTION */
@@ -67,7 +112,7 @@ header nav a.active {
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 8px;
 }
@@ -89,12 +134,16 @@ header nav a.active {
   text-decoration: none;
   font-weight: 600;
   border-radius: 4px;
-  transition: 0.3s;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
 }
 
 .btn:hover {
   background-color: var(--vault-blue);
   color: white;
+  transform: translateY(-1px);
 }
 
 .btn.small {
@@ -102,7 +151,7 @@ header nav a.active {
   font-size: 0.9rem;
 }
 
-/* FEATURED RECIPES */
+/* FEATURED RECIPES (HOME) */
 .recipes {
   padding: 3rem 2rem;
   text-align: center;
@@ -125,11 +174,12 @@ header nav a.active {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .recipe-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .recipe-card img {
@@ -143,12 +193,20 @@ header nav a.active {
   color: var(--vault-blue);
 }
 
+.recipe-card p {
+  margin: 0 15px 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
 /* ABOUT PAGE */
 .about-hero {
   background: url('https://images.unsplash.com/photo-1514516870926-2059896f3f13?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-  color: #0c25a5;
+  color: #fff;
   padding: 80px 20px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
 }
 
 .about-hero h2 {
@@ -183,12 +241,55 @@ header nav a.active {
   color: #555;
 }
 
+/* FAQ / COLLAPSIBLE SECTION */
+.lore-faq {
+  max-width: 900px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+.lore-faq h2 {
+  font-size: 2rem;
+  color: var(--vault-blue);
+  margin-bottom: 1rem;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.faq-item summary {
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq-item[open] {
+  border-left: 4px solid var(--vault-yellow);
+}
+
+.faq-item p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+/* Remove default triangle for summary in some browsers */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
 /* RECIPES PAGE */
 .recipes-hero {
   background: url('https://images.unsplash.com/photo-1601050690597-3ecdd3f3b2aa?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
 }
 
 .recipes-hero h2 {
@@ -211,10 +312,61 @@ header nav a.active {
   padding: 0 20px;
 }
 
-.recipe-card p {
-  margin: 0 15px 20px;
-  color: #555;
-  line-height: 1.5;
+/* FORM SECTION (HOME) */
+.newsletter {
+  padding: 3rem 2rem;
+  background-color: var(--beige);
+  text-align: left;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  color: var(--vault-blue);
+  margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-form {
+  max-width: 600px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.recipe-form fieldset {
+  border: none;
+  padding: 0;
+}
+
+.recipe-form legend {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--vault-blue);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font: inherit;
 }
 
 /* FOOTER */
@@ -228,13 +380,38 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
   .hero-content h1 {
     font-size: 2rem;
   }
 
-  header nav a {
-    margin-left: 0.8rem;
+  .recipes,
+  .newsletter {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header nav ul {
     font-size: 0.9rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
   }
 }

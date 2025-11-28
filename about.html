@@ -7,45 +7,76 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>Appalachian Cookbook</h1>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="logo" aria-label="Appalachian Cookbook logo">
+      Appalachian Cookbook
     </div>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="about-hero">
-    <h2>About This Site</h2>
-    <p>Inspired by the rich world of Fallout, this site celebrates the flavors of the Appalachian Wasteland.</p>
-  </section>
+  <main id="main-content">
+    <section class="about-hero" aria-labelledby="about-heading">
+      <h2 id="about-heading">About This Site</h2>
+      <p>Inspired by the rich world of Fallout, this site celebrates the flavors of the Appalachian Wasteland.</p>
+    </section>
 
-  <section class="about-content">
-    <div class="text-block">
-      <h3>About Fallout 76</h3>
-      <p>
-        <strong>Fallout 76</strong> is an online action role-playing game set in a post-apocalyptic version of West Virginia. 
-        Players explore a vast open world, build settlements, and discover remnants of the past while surviving in the Appalachian wilderness.
-      </p>
-      <p>
-        The game’s unique setting draws heavily from Appalachian culture, folklore, and cuisine, making it a perfect inspiration for a themed cookbook website.
-      </p>
-    </div>
+    <section class="about-content" aria-label="Background information">
+      <div class="text-block">
+        <h3>About Fallout 76</h3>
+        <p>
+          <strong>Fallout 76</strong> is an online action role-playing game set in a post-apocalyptic version of West Virginia. 
+          Players explore a vast open world, build settlements, and discover remnants of the past while surviving in the Appalachian wilderness.
+        </p>
+        <p>
+          The game’s unique setting draws heavily from Appalachian culture, folklore, and cuisine, making it a perfect inspiration for a themed cookbook website.
+        </p>
+      </div>
 
-    <div class="text-block">
-      <h3>Inspiration</h3>
-      <p>
-        This website was inspired by the recipes found in 
-        <em><strong>Fallout: The Vault Dweller's Official Cookbook</strong></em>. 
-        It reimagines classic Wasteland dishes in a fun, immersive way that connects fans of the game with real-world cooking.
-      </p>
-    </div>
-  </section>
+      <div class="text-block">
+        <h3>Inspiration</h3>
+        <p>
+          This website was inspired by the recipes found in 
+          <em><strong>Fallout: The Vault Dweller's Official Cookbook</strong></em>. 
+          It reimagines classic Wasteland dishes in a fun, immersive way that connects fans of the game with real-world cooking.
+        </p>
+      </div>
+    </section>
+
+    <!-- COLLAPSIBLE / INTERACTIVE SECTION -->
+    <section class="lore-faq" aria-label="Appalachian Wasteland Q&A">
+      <h2>Wasteland Cooking FAQ</h2>
+
+      <details class="faq-item">
+        <summary>What makes Appalachian Wasteland cuisine unique?</summary>
+        <p>
+          It combines pre-war comfort food with foraged ingredients, game meat, and improvised techniques—reflecting how survivors adapt traditional recipes
+          to a harsh new world.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to play Fallout 76 to enjoy these recipes?</summary>
+        <p>
+          Not at all. The recipes are inspired by the game’s world, but they’re meant to be cooked and enjoyed by anyone who loves rustic, hearty food.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are these recipes realistic or just for fun?</summary>
+        <p>
+          They’re designed as a fun blend of immersion and practicality—real ingredients, playful names, and nods to Fallout lore.
+        </p>
+      </details>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Appalachian Cookbook | Inspired by Fallout</p>
