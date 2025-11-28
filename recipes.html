@@ -7,79 +7,92 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>Appalachian Cookbook</h1>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="logo" aria-label="Appalachian Cookbook logo">
+      Appalachian Cookbook
     </div>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="recipes.html" class="active">Recipes</a></li>
+        <li><a href="recipes.html" class="active" aria-current="page">Recipes</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="recipes-hero">
-    <h2>Fallout-Inspired Recipes</h2>
-    <p>Explore dishes from the Appalachian Wasteland — inspired by the world of Fallout.</p>
-  </section>
+  <main id="main-content">
+    <section class="recipes-hero" aria-labelledby="recipes-heading">
+      <h2 id="recipes-heading">Fallout-Inspired Recipes</h2>
+      <p>Explore dishes from the Appalachian Wasteland — inspired by the world of Fallout.</p>
+    </section>
 
-  <section class="recipe-list">
-    <div class="recipe-card">
-      <img src="images/food1.jpg" alt="Mutfruit Tart">
-      <h3>Mutfruit Tart</h3>
-      <p>A sweet, flaky treat made from freshly picked Mutfruit.</p>
-    </div>
+    <section class="recipe-list" aria-label="List of recipes">
+      <article class="recipe-card">
+        <img src="images/food1.jpg" alt="Mutfruit Tart dessert on a plate">
+        <h3>Mutfruit Tart</h3>
+        <p>A sweet, flaky treat made from freshly picked Mutfruit.</p>
+        <a href="mutfruit-tart.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/a/a0/Mirelurk_meat_FO76.png" alt="Mirelurk Cake">
-      <h3>Mirelurk Cake</h3>
-      <p>Moist and savory, baked with Mirelurk meat and spices.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/a/a0/Mirelurk_meat_FO76.png" alt="Mirelurk meat prepared for cooking">
+        <h3>Mirelurk Cake</h3>
+        <p>Moist and savory, baked with Mirelurk meat and spices.</p>
+        <a href="mirelurk-cake.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/d/df/Cram.png" alt="Cram Stew">
-      <h3>Cram Stew</h3>
-      <p>A hearty stew made from pre-war canned meat and local herbs.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/d/df/Cram.png" alt="Cram canned meat from Fallout">
+        <h3>Cram Stew</h3>
+        <p>A hearty stew made from pre-war canned meat and local herbs.</p>
+        <a href="cram-stew.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="images/food2.jpg" alt="Brahmin Steak">
-      <h3> Brahmin Steak</h3>
-      <p>Grilled to perfection, straight from the wasteland pastures.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="images/food2.jpg" alt="Brahmin steak with grilled marks and sides">
+        <h3>Brahmin Steak</h3>
+        <p>Grilled to perfection, straight from the wasteland pastures.</p>
+        <a href="brahmin-steak.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/2/26/Radstag_steak.png" alt="Radstag Roast">
-      <h3> Radstag Roast</h3>
-      <p>Lean, roasted meat with a smoky Appalachian flavor.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/2/26/Radstag_steak.png" alt="Radstag steak on a plate">
+        <h3>Radstag Roast</h3>
+        <p>Lean, roasted meat with a smoky Appalachian flavor.</p>
+        <a href="radstag-roast.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/0/02/Nuka-Cola_classic.png" alt="Nuka-Cola Float">
-      <h3> Nuka-Cola Float</h3>
-      <p>A classic pre-war drink turned wasteland favorite.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/0/02/Nuka-Cola_classic.png" alt="Classic Nuka-Cola bottle">
+        <h3>Nuka-Cola Float</h3>
+        <p>A classic pre-war drink turned wasteland favorite.</p>
+        <a href="nuka-cola-float.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/b/b7/Iguana-on-a-stick_FO4.png" alt="Iguana on a Stick">
-      <h3>Iguana on a Stick</h3>
-      <p>Simple, grilled, and surprisingly delicious.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/b/b7/Iguana-on-a-stick_FO4.png" alt="Iguana meat cooked on a stick">
+        <h3>Iguana on a Stick</h3>
+        <p>Simple, grilled, and surprisingly delicious.</p>
+        <a href="iguana-on-a-stick.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/a/a3/Yao_guai_meat_FO76.png" alt="Yao Guai Ribs">
-      <h3>Yao Guai Ribs</h3>
-      <p>Rich and flavorful ribs, a hunter’s delicacy.</p>
-    </div>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/a/a3/Yao_guai_meat_FO76.png" alt="Yao Guai meat ready to cook">
+        <h3>Yao Guai Ribs</h3>
+        <p>Rich and flavorful ribs, a hunter’s delicacy.</p>
+        <a href="yao-guai-ribs.html" class="btn small">View Recipe</a>
+      </article>
 
-    <div class="recipe-card">
-      <img src="https://static.wikia.nocookie.net/fallout/images/7/7c/Deathclaw_steak.png" alt="Deathclaw Steak">
-      <h3>Deathclaw Steak</h3>
-      <p>Powerful flavors from one of the wasteland’s fiercest beasts.</p>
-    </div>
-  </section>
+      <article class="recipe-card">
+        <img src="https://static.wikia.nocookie.net/fallout/images/7/7c/Deathclaw_steak.png" alt="Deathclaw steak with garnish">
+        <h3>Deathclaw Steak</h3>
+        <p>Powerful flavors from one of the wasteland’s fiercest beasts.</p>
+        <a href="deathclaw-steak.html" class="btn small">View Recipe</a>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Appalachian Cookbook | Inspired by Fallout</p>
